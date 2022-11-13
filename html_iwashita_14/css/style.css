@@ -1,0 +1,252 @@
+@charset "utf-8"; 
+/* レスポンシブにするための最初の定義 */
+
+/* 大枠の定義開始 */
+.wrap{
+    max-width: 1200px;
+    margin: auto;
+    color: #222222;
+    font-size: 16px;
+    text-align: center;
+    line-height: normal;
+}
+/* なるべく入力減らしたく、タイトル系はh1で一括設定 */
+h1{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 60px 0 30px;
+}
+/* h1同様の思想 */
+h2{
+    font-size: 18px;
+    margin-bottom: 60px;
+}
+/* レスポンシブレイアウトトライしたがうまく挙動せず、方針転換 */
+.header{
+    max-width: 1200px;
+    margin: auto;
+    font-size: 21px;
+}
+/* トマトチーズ画像の大きさ設定 */
+.mainvisual{
+    max-width: 1200px;
+    margin: auto;
+}
+/* 大枠の定義終わり */
+/* 各パーツの定義 */
+/* headerのロゴとリンク群を左右に分割 */
+.header{
+    flex: auto;
+    display: flex;
+}
+/* ロゴを右寄せ */
+#headerlogo{
+    max-height: 80px;
+    display: block;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto
+}
+/* リンク群を横並び */
+.text-center{
+    display: flex;
+}
+/* リンク群を前後左右50px幅間隔で置く */
+.navi{
+    margin: 50px;
+    margin-right: auto;
+}
+/* トマトチーズ画像内に文字 */
+.mainvisual{
+    position: relative;
+}
+.mainvisual p1{
+    position: absolute;
+    color: white;
+    top: 170px;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+    font-style: bold;
+}
+.mainvisual p2{
+    position: absolute;
+    color: white;
+    top: 250px;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+}
+.mainvisual img{
+    width: 1200px;
+}
+/* 画像内テキストの位置調整はめちゃ苦闘。結局pタグもhタグと同様に数字持てることを知り解決 */
+.mv-txt{
+    font-size: 30px;
+    font-style: bold;
+}
+#change-font{
+    font-size: 15px;
+}
+    
+
+/* About */
+/* Aboutタイトルフォントカラー */
+.about{
+    color: #ffd61a;
+}
+/* About内本文フォントカラー */
+.blacktxt{
+    color: #222222;
+}
+/* 行間調整 */
+.gyokan{
+    margin: 40px 0;
+}
+/* Aboutブロックレベル要素下段の間隔 */
+.last{
+    margin-bottom: 80px;
+}
+/* ４連画像の横並び */
+/* 外側画像と内側画像の幅調整できず。個別にタグ付けて調整トライも横並びが崩壊して断念。 */
+.card{
+    display: flex;
+    
+}
+.card-content{
+    min-width: 0;
+    width: 100%;
+}
+    
+/* Course部分Flex Box設定 */
+/* 画像とテキストパートをそれぞれブロック化して、flex boxで設定すればいけると考えたが中途半端な結果に。。 */
+/* 左側のテキストパートは右側画像から50pxの間隔に設定できず */
+.course{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 60px 0;
+}
+.course-item{
+    max-width: 600px;
+    width: 100%;
+    
+}
+/* テキスト部分をフレックスコンテナ化して中のアライメント調整 */
+.course-txt-title{
+    margin: 120px 0 40px 50px;
+    text-align: left;
+    
+}
+.course-txt-item{
+    margin: 0 50px;
+    text-align: left;
+}
+#course-txt{
+    max-width: 550px;
+    width: 100%;
+    padding: 0 50px 0 0;
+    text-align: right;
+}
+/* News横並び */
+.news{
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    margin: 0 0 60px
+}
+#news{
+    color: #ffd61a;
+    margin: 0 0 60px;
+}
+.pizza-photo{
+    width: 380px;
+}
+.news-date{
+    margin: 30px 0 24px;
+}
+.btn{
+    margin-top: 60px;
+}
+.btn-text-center{
+    background-color: #ffd61a;
+    max-width: 100%;
+    padding: 30px 150px;
+    width: 300px;
+    height: 60px;
+    font-size: 18px;
+    color: aliceblue;
+    vertical-align: middle;
+}
+.btn-text-center:hover{
+    opacity: 0.6;
+}
+/* access */
+/* なぜmarginが機能しない？ */
+#access{
+    margin-top: 60px;
+}
+/* 同じ行内で文字を分けて、二つとも左揃えってどうやるの？調べても調べても見つからず。。 */
+.info-wrapper{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 500px;
+    margin: 60px 0 0 400px;
+}
+.info-item{
+    text-align: left;
+    padding: 15px 0px;
+}
+/* contact */
+/* 枠線のつけ方アライメントの整え方わからない（どうやって調べる？）marginタブ入れようとすると入力フォームがずれちゃう。。 */
+.form-wrapper{
+    width: 560px;
+    margin: auto;
+}
+.form-inner{
+    display: flex;
+    flex-wrap: wrap;
+}
+.form-title{
+    width: 172px;
+    text-align: left;
+}
+.form-item{
+    width: 388px;
+    text-align: left;
+       
+}
+.contact-txt{
+    margin: 30px 0 70px;
+}
+/* 送信ボタンの"送信"、なぜずれる？ */
+.submit-btn{
+    background-color: #ffd61a;
+    max-width: 100%;
+    padding: 30px 150px;
+    width: 300px;
+    height: 60px;
+    font-size: 18px;
+    color: aliceblue;
+    border: unset;
+}
+.submit-btn:hover{
+    opacity: 0.6;
+}
+.footer{
+    margin: 140px;
+    text-align: center;
+    background-color: #707070;
+    color: aliceblue;
+    padding: 30px 0 30px;
+}
